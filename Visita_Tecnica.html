@@ -1,5 +1,8 @@
 <html>
-<head><meta charset=”utf-8″><meta name="Pedro Loureiro"></head>
+<head>
+  <meta charset=”utf-8″>
+  <meta name="Pedro Loureiro">
+</head>
 <body>
 <script>
 function download(filename, text) {
@@ -220,6 +223,111 @@ ou sem andaimes (altura); outro)</p>
   <p>Chapa (Metálica / Sandwich)</p>
   <input type="text" name="1.1.3.1.9.2_Tipo_Chapa" placeholder="Tipo de chapa">
 
+  <h4>1.1.3.1.9.2.1</h4>
+  <p>Espaçamento entre Parafusos na vertical (cm)</p>
+  <input type="text" name="1.1.3.1.9.2.1_Espacamento_parafusos_vertical" placeholder="Espaçamento (cm)">
+
+  <h4>1.1.3.1.9.2.2</h4>
+  <p>Espaçamento entre Parafusos na horizontal (cm)</p>
+  <input type="text" name="1.1.3.1.9.2.2_Espacamento_parafusos_horizontal" placeholder="Espaçamento (cm)">
+
+  <h4>1.1.3.2</h4>
+  <p>Chão ou Cobertura plana em Betão</p>
+  <input type="text" name="1.1.3.2_Chao" placeholder="Tipo de chão">
+
+  <h4>1.1.3.2.1</h4>
+  <p>Área total disponível (Fotos)</p>
+  <input type="file" name="1.1.3.2.1_Area" accept="image/*">
+
+  <h4>1.1.3.2.2</h4>
+  <p>Comprimento da área (m)</p>
+  <input type="text" name="1.1.3.2.2_Area" placeholder="Área (metros)">
+
+  <h4>1.1.3.2.3</h4>
+  <p>Largura da área (m)</p>
+  <input type="text" name="1.1.3.2.3_Area" placeholder="Área (metros)">
+
+  <h4>1.1.3.2.4</h4>
+  <p>Em condições para instalar ou precisa de ser arranjado o local? (Fotos)</p>
+  <input type="text" name="1.1.3.2.4_Condicoes" placeholder="Condições">
+  <input type="file" name="1.1.3.2.4_Condicoes_fotos" accept="image/*">
+
+  <h4>1.1.3.2.5</h4>
+  <p>Sombreamento (Fotos)</p>
+  <input type="text" name="1.1.3.2.5_Sombreamento" placeholder="Sombreamento">
+  <input type="file" name="1.1.3.2.5_Sombreamento_fotos" accept="image/*">
+
+  <h4>1.1.3.2.6</h4>
+  <p>Obstáculos (Fotos)</p>
+  <input type="text" name="1.1.3.2.6_Obstáculos" placeholder="Obstáculos">
+  <input type="file" name="1.1.3.2.6_Obstáculos_Fotos" accept="image/*">
+
+  <h4>1.1.4</h4>
+  <p>Local de Instalação do Inversor / Inversor+Baterias</p>
+  <input type="text" name="1.1.4_Local_Instalacao" placeholder="Local">
+  
+  <h4>1.1.4.1</h4>
+  <p>Interior ou Exterior (Fotos)</p>
+  <select name="1.1.4.1_Interior_Exterior">
+    <option value="Exterior">Exterior</option>
+    <option value="Interior">Interior</option>
+  </select>
+  <input type="file" name="1.1.4.1_Interior_Exterior_fotos" accept="image/*">
+
+  <h4>1.1.4.2</h4>
+  <p>Local da Casa (Garagem / Hall de Entrada / Corredor / Outro) (Fotos)</p>
+  <input type="text" name="1.1.4.2" placeholder="Local">
+  <input type="file" name="1.1.4.2_local" accept="image/*">
+
+  <h4>1.1.4.3</h4>
+  <p>Necessidade de furos na parede para passagem de cabos? (Fotos)</p>
+  <input type="text" name="1.1.4.3_furacao" placeholder="Furação">
+  <input type="file" name="1.1.4.3_furacao_fotos" accept="image/*">
+
+  <h4>1.1.4.4</h4>
+  <p>Necessidade de enterrar dos cabos? Se sim: Comprimento (m); Tipo Chão
+para abrir vala/roço (Fotos)</p>
+  <input type="text" name="1.1.4.4_cabos" placeholder="Enterrar cabos?">
+  <input type="file" name="1.1.4.4_cabos_fotos" accept="image/*">
+
+  <h4>1.1.4.5</h4>
+  <p>Estimativa da Distância ao Gerador Fotovoltaico (m) - para estimar o
+comprimento de cabo solar e cabo terra necessário</p>
+  <input type="text" name="1.1.4.5_Distancia" placeholder="Distância (metros)">
+
+  <h4>1.1.4.6</h4>
+  <p>Estimativa da Distancia de exposição solar dos Cabos solares (m) - para
+estimar o comprimento de Tubo Anelado necessário</p>
+  <input type="text" name="1.1.4.6_Distancia" placeholder="Distância (metros)">
+
+  <h4>1.1.4.7</h4>
+  <p>Comprimento estimado de Tubo VD no percurso Gerador-Inversor (m)</p>
+  <input type="text" name="1.1.4.7_Distancia" placeholder="Distância (metros)">
+
+  <h4>1.1.4.8</h4>
+  <p>Comprimemto estimado de Calha no percurso Gerador-Inversor (m)</p>
+  <input type="text" name="1.1.4.8_Distancia" placeholder="Distância (metros)">
+
+  <h4>1.1.5</h4>
+  <p>Irregularidades ou Especificidades do local</p>
+  <input type="text" name="1.1.5_Irregularidades" placeholder="Irregularidades">
+
+  <h4>1.1.5.1</h4>
+  <p>Estado das telhas</p>
+  <input type="text" name="1.1.5.1_Estado_telhas" placeholder="Estado das telhas">
+
+  <h4>1.1.5.2</h4>
+  <p>Estado da estrutura base que vai suportar a estrutura do gerador</p>
+  <input type="text" name="1.1.5.2_estrutura" placeholder="Estado da estrutura"> 
+
+  <h4>1.1.5.3</h4>
+  <p>Existência de Pragas que inviabilizem a instalação</p>
+  <input type="text" name="1.1.5.3_Pragas" placeholder="Pragas?">
+
+  <h4>1.1.5.4</h4>
+  <p>Existência de Ninhos que precisem de ser retirados</p>
+  <input type="text" name="1.1.5.3_Ninhos" placeholder="Ninhos?">
+
   <br><br><br>
   <h4>Salvar o relatório:</h4>
   <input type="text" name="name" value="" placeholder="Nome do Cliente">
@@ -231,6 +339,3 @@ ou sem andaimes (altura); outro)</p>
 </form>
 </body>
 </html>
-
-
-
