@@ -1,0 +1,236 @@
+<html>
+<head><meta charset=”utf-8″><meta name="Pedro Loureiro"></head>
+<body>
+<script>
+function download(filename, text) {
+  var pom = document.createElement('a');
+  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  pom.setAttribute('download', filename);
+  pom.style.display = 'none';
+  document.body.appendChild(pom);
+  pom.click();
+  document.body.removeChild(pom);
+}
+
+function addTextHTML() {
+  document.addtext.name.value = document.addtext.name.value + ".html";
+}
+
+function addTextTXT() {
+  document.addtext.name.value = document.addtext.name.value + ".txt";
+}
+
+function generateHTML() {
+  var formElements = document.getElementById("myForm").elements;
+  var html = '<html>\n<head></head>\n<body>\n';
+
+  for (var i = 0; i < formElements.length; i++) {
+    var element = formElements[i];
+    var fieldName = element.name;
+    var fieldValue = element.value;
+
+    if (element.type === "checkbox") {
+      fieldValue = element.checked ? "Yes" : "No";
+    }
+
+    if (element.type === "file") {
+      fieldValue = element.files.length > 0 ? element.files[0].name : "";
+    }
+
+    html += fieldName + ": " + fieldValue + "<br>";
+  }
+
+  html += '</body>\n</html>';
+  return html;
+}
+</script>
+
+<form name="addtext" onsubmit="download(this['name'].value, generateHTML())" id="myForm">
+  <h1>Visita Técnica</h1>
+  
+
+  <h3>1.1</h3>
+  <p>Gerador Fotovoltaico / com ou sem Armazenamento</p>
+  <select name="1.1_com_armazenamento_sem_armazenamento">
+    <option value="com_armazenamento">Com armazenamento</option>
+    <option value="sem_armazenamento">Sem armazenamento</option>
+  </select>
+
+  <h3>1.1.1</h3>
+  <p>Contador Elétrico</p>
+
+  <h3>1.1.1.1</h3>
+  <p>Quantos tem? A qual vai ficar ligado o sistema?</p>
+  <input type="text" name="1.1.1.1_Qtd_Vias" placeholder="Quantidade de vias">
+  <input type="text" name="1.1.1.1_Sistema_Ligacao" placeholder="Sistema de ligação">
+  
+  <h4>1.1.1.2</h4>
+  <p>Monofásico ou Trifásico?</p>
+  <select name="1.1.1.2_Monofasico_Trifasico">
+    <option value="Monofásico">Monofásico</option>
+    <option value="Trifásico">Trifásico</option>
+  </select>
+  
+  <h4>1.1.1.3</h4>
+  <p>Potência Instalada/contratada? (ver fatura eletricidade)</p>
+  <input type="text" name="1.1.1.3_Potencia" placeholder="Potência instalada/contratada">
+
+  <h3>1.1.1.4</h3>
+  <p>Bidirecional?</p>
+  <input type="checkbox" name="1.1.1.4_Bidirecional">  
+
+  <h3>1.1.2</h3>
+  <p>Quadros Elétricos</p>
+  
+  <h3>1.1.2.1</h3>
+  <p>Quantos tem e em que Local da Casa (Garagem / Hall de Entrada / Corredor / Outro) (Fotos)</p>
+  <input type="text" name="1.1.2.1_Quantidade" placeholder="Quantidade">
+  <input type="text" name="1.1.2.1_Local" placeholder="Local da Casa">
+  <input type="file" name="1.1.2.1_Fotos" accept="image/*">
+
+  <h3>1.1.2.2</h3>
+  <p>Qual o quadro a que se vai ligar o Inversor / Inversor+Baterias? (Fotos)</p>
+  <input type="text" name="1.1.2.2_Quadro_Inversor" placeholder="Quadro ligação inversor.">
+  <input type="file" name="1.1.2.2_Fotos" accept="image/*">
+
+  <h3>1.1.2.3</h3>
+  <p>Interior ou Exterior (Fotos)</p>
+  <select name="1.1.1.3_Interior_Exterior">
+    <option value="Interior">Interior</option>
+    <option value="Exterior">Exterior</option>
+  </select>
+  <input type="file" name="1.1.2.3_Fotos" accept="image/*">
+
+  <h3>1.1.2.4</h3>
+  <p>Tipos de Disjuntores e Diferencial? (Fotos)</p>
+  <input type="text" name="1.1.2.4_Disjuntores_Diferencial" placeholder="Disjuntores e diferencial">
+  <input type="file" name="1.1.2.4_Fotos" accept="image/*">
+
+  <h3>1.1.2.5</h3>
+  <p>Medição da Terra (Fotos)</p>
+  <input type="text" name="1.1.2.5_Medicao_Terra" placeholder="Medição">
+  <input type="file" name="1.1.2.5_Fotos" accept="image/*">
+
+  <h3>1.1.2.6</h3>
+  <p>Falta instalar algum elemento para garantir a segurança da nossa
+instalação?</p>
+  <input type="text" name="1.1.2.5_Seguranca" placeholder="Segurança">
+
+  <h3>1.1.2.7</h3>
+  <p>Há espaço para colocar o meter? (Fotos)</p>
+  <input type="text" name="1.1.2.7_Meter" placeholder="Meter">
+  <input type="file" name="1.1.2.7_Meter_fotos" accept="image/*">
+
+  <h3>1.1.2.8</h3>
+  <p>Há espaço para colocar as proteções AC do Inversor? (Fotos)</p>
+  <input type="text" name="1.1.2.8_protecoes" placeholder="Proteções AC">
+  <input type="file" name="1.1.2.8_protecoes_fotos" accept="image/*">
+
+  <h4>1.1.2.09</h4>
+  <p>Necessidade de furos para passagem de cabos? (Fotos)</p>
+  <input type="file" name="1.1.2.09_Fotos" accept="image/*">
+
+  <h4>1.1.2.10</h4>
+  <p>Estimativa da Distância ao Inversor /Inversor+Baterias (m) - para estimar
+o comprimento/espessura de Cabo Eléctrico e Cabo de Rede</p>
+  <input type="text" name="1.1.2.10_Distancias" placeholder="Distância metros">
+
+  <h4>1.1.2.11</h4>
+  <p>Comprimento estimado de Tubo VD no percurso Inversor-Quadro (m)</p>
+  <input type="text" name="1.1.2.11_Tubo_vd" placeholder="Distância metros">
+
+  <h4>1.1.2.12</h4>
+  <p>Comprimemto estimado de Calha no percurso Inversor-Quadro (m)</p>
+  <input type="text" name="1.1.2.12_Distancias_vd" placeholder="Distância metros">
+
+  <h4>1.1.3</h4>
+  <p>Local de Instalação dos Módulos Fotovoltaicos</p>
+  <input type="text" name="1.1.3_Local_Instalação" placeholder="Local da instalação">
+
+  <h4>1.1.3.1</h4>
+  <p>Telhado</p>
+  <select name="1.1.3.1_Telhado">
+    <option value="Sim">Sim</option>
+    <option value="Nao">Não</option>
+  </select>
+
+  <h4>1.1.3.1.1</h4>
+  <p>Inclinação (Graus)</p>
+  <input type="text" name="1.1.3.1.1_Inclinacao" placeholder="Inclinação Graus">
+
+  <h4>1.1.3.1.2</h4>
+  <p>Orientação (Graus)</p>
+  <input type="text" name="1.1.3.1.2_Orientação" placeholder="Orientação Graus">
+
+  <h4>1.1.3.1.3</h4>
+  <p>Área disponível (Fotos)</p>
+  <input type="text" name="1.1.3.1.3_Area" placeholder="Área (metros)">
+  <input type="file" name="1.1.3.1.3_Area_disponivel" accept="image/*">
+
+  <h4>1.1.3.1.4</h4>
+  <p>Sombreamento (Fotos)</p>
+  <input type="text" name="1.1.3.1.4_Sombreamento" placeholder="Sombreamento">
+  <input type="file" name="1.1.3.1.4_Sombreamento_fotos" accept="image/*">
+
+  <h4>1.1.3.1.5</h4>
+  <p>Obstáculos (Fotos)</p>
+  <input type="text" name="1.1.3.1.5_Obstaculos" placeholder="Obstáculos">
+  <input type="file" name="1.1.3.1.5_Obstaculos_fotos" accept="image/*">
+
+  <h4>1.1.3.1.6</h4>
+  <p>Acesso ao telhado (Exterior ou Interior)</p>
+  <select name="1.1.3.1.6_Acesso_Telhado_Interior_Exterior">
+    <option value="Exterior">Exterior</option>
+    <option value="Interior">Interior</option>
+  </select>
+
+  <h4>1.1.3.1.7</h4>
+  <p>Tipo de acesso dos trabalhadores ao telhado (interior ou exterior; com
+ou sem andaimes (altura); outro)</p>
+  <input type="text" name="1.1.3.1.7_Acesso_telhado_trabalhadores" placeholder="Acesso ao telhado">
+
+  <h4>1.1.3.1.8</h4>
+  <p>Elevação do Material para o telhado (escadas;cordas;guindastre)</p>
+  <input type="text" name="1.1.3.1.8_Elevacao_material" placeholder="Elevação Material">
+
+  <h4>1.1.3.1.9</h4>
+  <p>Tipo de Telhado</p>
+  <input type="text" name="1.1.3.1.9_Tipo_telhado" placeholder="Tipo de telhado">
+
+  <h4>1.1.3.1.9.1</h4>
+  <p>Telha</p>
+  <select name="1.1.3.1.9.1_Telha">
+    <option value="Sim">Sim</option>
+    <option value="Nao">Não</option>
+  </select>
+
+  <h4>1.1.3.1.9.1.1</h4>
+  <p>Tipo de Telha (Lusa / Marselha (rasa) / Canudo (em U) </p>
+  <input type="text" name="1.1.3.1.9.1.1_Tipo_Telha" placeholder="Tipo de telha">
+
+  <h4>1.1.3.1.9.1.2</h4>
+  <p>Tipo de Viga (Horizontal ou Vertical / Madeira ou Betão)</p>
+  <input type="text" name="1.1.3.1.9.1.2_Tipo_Viga" placeholder="Tipo de viga">
+
+  <h4>1.1.3.1.9.1.3</h4>
+  <p>Espaçamento entre vigas (cm)</p>
+  <input type="text" name="1.1.3.1.9.1.3_Espacamento_viga" placeholder="Espaçamento entre vigas (cm)">
+
+  <h4>1.1.3.1.9.2</h4>
+  <p>Chapa (Metálica / Sandwich)</p>
+  <input type="text" name="1.1.3.1.9.2_Tipo_Chapa" placeholder="Tipo de chapa">
+
+  <br><br><br>
+  <h4>Salvar o relatório:</h4>
+  <input type="text" name="name" value="" placeholder="Nome do Cliente">
+  <input type="submit" onClick="addTextHTML();" value="Salvar como HTML">
+  <input type="submit" onClick="addTextTXT();" value="Salvar como TXT">
+  <br><br><br>
+  <p>Notas: Pedir ao cliente faturas de Electricidade do último ano.</p>
+  <p>Notas: As imagens necessitam de ser enviadas para o chat whatsapp.</p>
+</form>
+</body>
+</html>
+
+
+
